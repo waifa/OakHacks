@@ -82,7 +82,7 @@ function clinicFind(){
         createTable: (selector)=>{
             var table ="<table><tr><th><h3>Clinic</h3></th><th><h3>Location</h3></th><th><h3>Distance From You</h3></th><th><h3>Directions</h3></th></tr>"
             for(var i = 0; i<clinics.length; i++){
-                var link = "onclick=\"location.href='https://www.google.com/maps/search/"+clinics[i].location+"'\""
+                var link = "onclick=\"window.open('https://www.google.com/maps/search/"+clinics[i].location+"');\""
                 table = table + "<tr> <td><b>" +clinics[i].name+ "</b></td>" + 
                 "<td>"+clinics[i].location+"</td><td>"+ Math.round(clinics[i].distance * 10) / 10 +" Km</td>" +
                 "<td><button class='directionButton'" +  link + ">Directions</button></td></tr>"
