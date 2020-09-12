@@ -1,0 +1,101 @@
+/* Styles for stores */
+
+h1 {
+    font-size: xx-large;
+    color: darkblue;
+    text-align: center;
+    text-decoration: blue underline;
+    text-shadow: 2px 2px 5px blue;
+  }
+
+  h2,h3,h4 {
+    color: darkblue;
+    text-align: left;
+    text-shadow: 2px 2px 5px blue;
+  }
+  
+  body {
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(188, 188, 212);
+  }
+
+
+  #round-container {
+    border-radius: 25px;
+    background:lightblue;
+    padding: 15px; 
+    width: 300px;
+    height: auto;
+    text-align: left;
+    margin: 10px;
+    /* border: 15px solid green;   */
+  }
+
+  #round-container2 {
+    border-radius: 25px;
+    background:lightblue;
+    padding: 15px; 
+    width: auto;
+    height: auto;
+    text-align: left;
+    margin: 10px;
+    /* border: 15px solid green;   */
+  }
+
+  .myround-container {
+    border-radius: 25px;
+    background:lightblue;
+    padding: 15px; 
+    width: auto;
+    height: auto;
+    text-align: left;
+    margin: 10px;
+    /* border: 15px solid green;   */
+  }
+
+  table {
+    width: 100%;
+    background-color: rgb(0, 191, 255);
+    color: black;
+  }
+  
+  td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid black;
+  }
+
+  tr, th{
+    border-bottom: 1px solid black;
+  }
+  
+  tr:hover {background-color: rgb(62, 179, 218);}
+  th:hover {background-color: rgb(62, 179, 218);}
+  
+  .bookButton {
+    background-color: rgb(6, 6, 56); /* Green */
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.s;
+    cursor: pointer;
+  }
+
+  .bookButton:hover {
+    background-color: red;
+    color: black;
+  }
+
+  p, dl, dt{
+    color: darkblue;
+    text-align: left;
+    font-weight: bold;
+  }
+
+  
