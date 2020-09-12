@@ -85,12 +85,12 @@ function clinicFind(){
                 var link = "onclick=\"location.href='https://www.google.com/maps/search/"+clinics[i].location+"'\""
                 table = table + "<tr> <td><b>" +clinics[i].name+ "</b></td>" + 
                 "<td>"+clinics[i].location+"</td><td>"+ Math.round(clinics[i].distance * 10) / 10 +" Km</td>" +
-                "<td><button class='bookButton'" +  link + ">Directions</button></td></tr>"
+                "<td><button class='directionButton'" +  link + ">Directions</button></td></tr>"
             }
             table = table + "</table>"
             $(selector).append("<h2>Clinics Close to You:</h2>").hide().show(300)
             $(selector).append(table).hide().show(300)
-            var searchAgain = "<button class='bookButton' onclick='window.location.reload()'>Search Again</button>"
+            var searchAgain = "<button class='directionButton' onclick='window.location.reload()'>Search Again</button>"
             $(selector).append(searchAgain).hide().show(300)
             $("#round-container").hide(300)
         },
