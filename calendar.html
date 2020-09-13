@@ -4,6 +4,7 @@
     <meta charset='utf-8' />
     <link href='fullcalendar-scheduler/main.css' rel='stylesheet' />
     <script src='fullcalendar-scheduler/main.js'></script>
+    <link rel="stylesheet" type="text/css" href="styles.css">
     
     <script>
       bookings = []
@@ -128,12 +129,24 @@
     </script>
 
   </head>
-  <body>
-    <div style="width: 70%;" id='calendar'></div>
-    <div id="booker"></div>
-    <div id = "viewButton">
-      <button type="button" onclick="viewFunction()">View Appointments</button>
+  <div class="main">
+    <div class="logo">
+      <img src="images/logo.png" height="125px" width="125px">
     </div>
-    <div id = "applist"></div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+            <li><a href="clinics.html">Clinics</a></li>
+            <li><a href="calendar.html">Calender</a></li>
+            <li><a>Register</a></li>
+            <li><a>Log In</a></li>
+    </ul>
+  </div>
+  <body id="body2">
+      <div style="width: 70%;" id='calendar'></div>
+      <div id="booker"></div>
+      <div id = "viewButton">
+        <button type="button" onclick="viewFunction()">View Appointments</button>
+      </div>
+      <div id = "applist"></div>
   </body>
 </html>
