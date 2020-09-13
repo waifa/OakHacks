@@ -14,7 +14,7 @@ function clinicFind(){
         
         addSearchBar: (selector,placeholder)=>{
             var searchbar = "<input type='text' id='searchInput' placeholder='"+placeholder+"' name='search'>" +
-                            "<button class='searchButton' type='submit' onclick='clinicFind().sortClinics()'><img width='10px' height='10px' src='searchIcon.png'></button>"
+                            "<button class='searchButton' type='submit' onclick='clinicFind().sortClinics()'><img width='10px' height='10px' src='images/searchIcon.png'></button>"
             $(selector).append(searchbar)
             // slider is not my work and is borrowed straight from w3schools
             var slider  = '<input type="range" min="1" max="100" value="50" class="slider" id="myRange"><p>Search Within: <span id="demo"></span> km</p>'

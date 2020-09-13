@@ -1,0 +1,83 @@
+*{
+  margin: 0;
+  padding: 0;
+  font-family: Josefin Sans;
+}
+
+.ig {
+  background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url(images/nurse.png);
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+}
+
+ul {
+  float: right;
+  list-style-type: none;
+  margin-top: 30px;
+  margin-right: 40px;
+}
+
+ul li {
+  display: inline-block;
+  margin-left: 15px;
+}
+
+ul li a {
+  text-decoration: none;
+  color: black;
+  padding: 5px 20px;
+  border: 1px solid transparent;
+  transition: 0.6s ease;
+}
+
+ul li a:hover {
+  background-color: black;
+  color: white;
+}
+
+.logo {
+  float: left;
+  margin-left: 10px;
+}
+
+.title {
+  position: absolute;
+  top:40%;
+  left:70%;
+  width: 1000px;
+  transform: translate(-50%, -50%);
+}
+
+.title h1 {
+  color: black;
+  font-size: 70px;
+  text-align: center;
+}
+.title h2 {
+  color: black;
+  font-size: 50px;
+  text-align: center;
+}
+
+.button{
+  position: absolute;
+  top:53%;
+  left:75%;
+  width: 460px;
+  transform: translate(-50%, -50%);
+
+}
+
+.btn {
+  border: 1px solid black;
+  padding: 10px 30px;
+  color: black;
+  text-decoration: none;
+  transition: 0.6s ease;
+}
+
+.btn:hover {
+  background-color: black;
+  color: white;
+}
