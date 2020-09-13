@@ -1,107 +1,105 @@
-/* Styling for Homepage*/
-
+/* Styling for Header*/
 *{
-  padding: 0;
   margin: 0;
-  font-family: verdana;
+  padding: 0;
+  font-family: Josefin Sans;
 }
 
-.wrapper{
-  background: url(images/nurse.jpg); 
-  background-size: cover;
+.headerhomepage {
+  background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url(images/nurse.png);
   height: 100vh;
+  background-size: cover;
+  background-position: center;
 }
 
-nav {
-width: 100%;
-height: 80px;
-background-color: rgba(0, 0, 0, 0.4);
-line-height: 80px;
+.headerhomepage2 {
+  background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(images/clinic3.jpg);
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
 }
 
-nav ul {
-float: right;
+ul {
+  float: right;
+  list-style-type: none;
+  margin-top: 30px;
+  margin-right: 40px;
 }
 
-nav ul li {
-list-style-type: none;
-display: inline-block;
+ul li {
+  display: inline-block;
+  margin-left: 15px;
 }
 
-nav ul li a {
-text-decoration: none;
-color: #ffff;
-padding: 30px;
-transition: .4s;
-}
-nav ul li:hover {
-background-color: #D3D3D3;
+ul li a {
+  text-decoration: none;
+  color: rgb(0, 5, 63);
+  padding: 5px 20px;
+  border: 1px solid transparent;
+  transition: 0.6s ease;
 }
 
+ul li a:hover {
+  background-color: rgb(0, 5, 63);
+  color: white;
+}
 
-.wrapper .center{
+.logo {
+  float: left;
+  margin-left: 10px;
+}
+
+.title {
   position: absolute;
-  top: 50%;
-  left: 55%;
+  top:40%;
+  left:70%;
+  width: 1000px;
   transform: translate(-50%, -50%);
 }
 
-#mainpageh1 {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-#mainpageh2 {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-
-.center h1 {
-  color: Grey;
+.title h1 {
+  color:  rgb(0, 5, 63);
   font-size: 70px;
-  font-weight: bold;
-  width: 900px;
+  text-align: center;
+}
+.title h2 {
+  color:rgb(0, 5, 63);
+  font-size: 50px;
   text-align: center;
 }
 
-.center h2 {
-  color: grey;
-  font-size: 65px;
-  font-weight: bold;
-  width: 885px;
-  margin-top: 10px;
-  text-align: center;
+.button{
+  position: absolute;
+  top:56%;
+  left:75%;
+  width: 460px;
+  transform: translate(-50%, -50%);
+
 }
 
-.center .buttons{
-  margin: 35px 280px;
-}
-
-.buttons button{
-  width: 150px;
-  font-size: 17px;
-  height: 55px;
-  font-weight: bold;
-  color: #D3D3D3;
-  background-color: rgb(126, 126, 126);
+.btn {
   border: 1px solid black;
-  outline: none;
-  cursor: pointer;
-  border-radius: 30px;
+  padding: 10px 30px;
+  color: black;
+  text-decoration: none;
+  transition: 0.6s ease;
 }
 
-#btn{
-  margin-left: 25px;
-}
-
-.buttons button:hover {
-  background: rgb(68, 68, 68);
+.btn:hover {
+  background-color: rgb(0, 5, 63);
+  color: white;
 }
 
 /* moazs styles  */
-#moaz {
-    font-size: xx-large;
-    color: darkblue;
-    text-align: center;
-    text-decoration: blue underline;
-    text-shadow: 2px 2px 5px blue;
+
+  #moaz {
+    position: absolute;
+    top:13.5%;
+    left:50%;
+    width: 250px;
+    transform: translate(-50%, -50%);
+    border-radius: 25px;
+    color: rgb(0, 5, 63);
   }
 
   #moaz2 {
@@ -119,22 +117,30 @@ background-color: #D3D3D3;
 
 
   #round-container {
+    position: absolute;
+    top:29%;
+    left:49.5%;
+    width: 200px;
+    transform: translate(-50%, -50%);
     border-radius: 25px;
     background:lightblue;
-    padding: 15px; 
-    width: 300px;
     height: auto;
-    text-align: left;
-    margin: 10px;
+    text-align: center;
+    float: left;
+    padding: 15px;
     /* border: 15px solid green;   */
   }
 
   #round-container2 {
     border-radius: 25px;
-    background:lightblue;
+    background-color: rgb(0, 5, 63);
     padding: 15px; 
     width: auto;
     height: auto;
+    position: absolute;
+    top:55%;
+    left:49.5%;
+    transform: translate(-50%, -50%);
     text-align: left;
     margin: 10px;
     /* border: 15px solid green;   */
@@ -142,25 +148,28 @@ background-color: #D3D3D3;
 
   table {
     width: 100%;
-    background-color: rgb(0, 191, 255);
+    background-color: rgb(204, 204, 204);
     color: black;
+    text-align: center;
   }
   
   td {
     padding: 8px;
+    color: black;
     text-align: left;
     border-bottom: 1px solid black;
   }
 
   tr, th{
     border-bottom: 1px solid black;
+    color: black;
   }
   
-  tr:hover {background-color: rgb(62, 179, 218);}
-  th:hover {background-color: rgb(62, 179, 218);}
+  tr:hover {background-color: white ;}
+  th:hover {background-color: white;}
   
   .directionButton {
-    background-color: rgb(6, 6, 56); /* Green */
+    background-color: rgb(9, 38, 81); /* Green */
     border: none;
     color: white;
     padding: 16px 32px;
@@ -173,6 +182,6 @@ background-color: #D3D3D3;
   }
 
   .directionButton:hover {
-    background-color: red;
-    color: black;
+    background-color: orange;
+    color: rgb(0, 5, 63);
   }

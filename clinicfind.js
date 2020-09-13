@@ -6,6 +6,7 @@ var tableDiv = "body"
 var postalCode
 var click = false;
 var sliderValue = 50;
+var notValid = false;
 
 
 function clinicFind(){
@@ -14,7 +15,7 @@ function clinicFind(){
         
         addSearchBar: (selector,placeholder)=>{
             var searchbar = "<input type='text' id='searchInput' placeholder='"+placeholder+"' name='search'>" +
-                            "<button class='searchButton' type='submit' onclick='clinicFind().sortClinics()'><img width='10px' height='10px' src='searchIcon.png'></button>"
+                            "<button class='searchButton' type='submit' onclick='clinicFind().sortClinics()'><img width='10px' height='10px' src='images/searchIcon.png'></button>"
             $(selector).append(searchbar)
             // slider is not my work and is borrowed straight from w3schools
             var slider  = '<input type="range" min="1" max="100" value="50" class="slider" id="myRange"><p>Search Within: <span id="demo"></span> km</p>'
@@ -41,10 +42,13 @@ function clinicFind(){
         
 
         sortClinics: ()=>{
+            if(click && notValid){
+                click = false
+            }
             if (!click){
+            notValid = false;
             click = true
             async function getLatLng(){
-                let notValid = false;
                 let lat
                 let lng
                 postalCode = $("#searchInput").val()
@@ -109,13 +113,13 @@ function clinicFind(){
                     "<td><button class='directionButton'" +  link + ">Directions</button></td></tr>"
                 }
                 table = table + "</table>"
-                $(selector).append("<h2>Clinics Close to You:</h2>").hide().show(300)
+                $(selector).hide().show(300)
                 $(selector).append(table).hide().show(300)
                 var searchAgain = "<button class='directionButton' onclick='window.location.reload()'>Search Again</button>"
                 $(selector).append(searchAgain).hide().show(300)
                 $("#round-container").hide(300)
             }else{
-                var error = "<h2>Sorry, no clinics were found with your search criteria :("
+                var error = "<h2 style='color:white'>Sorry, no clinics were found with your search criteria :(</h2>"
                 $(selector).append(error).hide().show(300)
                 var searchAgain = "<button class='directionButton' onclick='window.location.reload()'>Search Again</button>"
                 $(selector).append(searchAgain).hide().show(300)
