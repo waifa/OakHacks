@@ -4,8 +4,13 @@
     <meta charset='utf-8' />
     <link href='fullcalendar-scheduler/main.css' rel='stylesheet' />
     <script src='fullcalendar-scheduler/main.js'></script>
-
+    <script>
+      function bookFunction() {
+            alert('booking attempted');
+          }
+    </script>
     <script type = "module">
+
       document.addEventListener('DOMContentLoaded', function() {
         var calendarEl = document.getElementById('calendar');
         var calendar = new FullCalendar.Calendar(calendarEl, {
@@ -13,18 +18,78 @@
           selectable: true,
 
           dateClick: function(info) {
-          alert('Date: ' + info.dateStr);
-        }
+          var booker = document.getElementById('booker');
+          booker.innerHTML = "Selected Date: " + info.dateStr;
+          var bookButton = document.createElement("BUTTON");
+          bookButton.setAttribute("type", "button");
+          bookButton.setAttribute("onclick", "bookFunction()");
 
+          var dropdownHOUR = document.createElement("SELECT");
+          dropdownHOUR.setAttribute("name", "Hour");
+          dropdownHOUR.setAttribute("id", "Hour");
+          
+          let i = 1;
+          for (i=1; i<13; i++){
+            var time = document.createElement("OPTION");
+            time.setAttribute("value", i.toString());
+            time.innerHTML = i.toString();
+            dropdownHOUR.appendChild(time);
+          }
+
+          booker.appendChild(dropdownHOUR);
+
+          var colon = document.createTextNode(":")
+          booker.appendChild(colon);
+
+          var dropdownMIN = document.createElement("SELECT");
+          dropdownMIN.setAttribute("name", "MIN");
+          dropdownMIN.setAttribute("id", "MIN");
+          
+          let k = 0;
+          for (k=0; k<60; k++){
+            var time = document.createElement("OPTION");
+            if (k<10){
+              time.setAttribute("value", "0" + k.toString());
+              time.innerHTML = "0" + k.toString();
+            }
+            else{
+              time.setAttribute("value", k.toString());
+              time.innerHTML = k.toString();
+            }
+            dropdownMIN.appendChild(time);
+          }
+
+          booker.appendChild(dropdownMIN);
+
+          var dropdownPM = document.createElement("SELECT");
+          dropdownPM.setAttribute("name", "MIN");
+          dropdownPM.setAttribute("id", "MIN");
+          
+          var time = document.createElement("OPTION");
+          time.setAttribute("value", "AM");
+          time.innerHTML = "AM";
+          dropdownPM.appendChild(time);
+
+          var time = document.createElement("OPTION");
+          time.setAttribute("value", "PM");
+          time.innerHTML = "PM";
+          dropdownPM.appendChild(time);
+
+          booker.appendChild(dropdownPM);
+
+          var text = document.createTextNode("Book Appointment");
+          bookButton.appendChild(text);
+          booker.appendChild(bookButton);
+        }
         });
         calendar.render();
       });
-
     </script>
     </script>
 
   </head>
   <body>
-    <div id='calendar'></div>
+    <div style="width: 70%;" id='calendar'></div>
+    <div id="booker"></div>
   </body>
 </html>
