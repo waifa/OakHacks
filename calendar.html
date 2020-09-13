@@ -4,10 +4,26 @@
     <meta charset='utf-8' />
     <link href='fullcalendar-scheduler/main.css' rel='stylesheet' />
     <script src='fullcalendar-scheduler/main.js'></script>
+    
     <script>
+      bookings = []
       function bookFunction() {
-            alert('booking attempted');
-          }
+        booking = {
+          name: document.getElementById("FNAME").value,
+          date: document.getElementById("infodate").innerHTML,
+          time: document.getElementById("HOUR").value + ":" + document.getElementById("MIN").value + document.getElementById("PM").value
+        }
+        bookings.push(booking);
+      }
+      function viewFunction() {
+        document.getElementById("applist").innerHTML = "";
+        for (i = 0; i < bookings.length; i++){
+          app = bookings[i];
+          var entry = document.createElement("LI")
+          entry.innerHTML = "Booking for " + app.name + " on "+ app.date + " at " + app.time;
+          document.getElementById("applist").appendChild(entry);
+        }
+      }
     </script>
     <script type = "module">
 
@@ -19,14 +35,22 @@
 
           dateClick: function(info) {
           var booker = document.getElementById('booker');
-          booker.innerHTML = "Selected Date: " + info.dateStr;
+          booker.innerHTML = "";
+          var sdate = document.createTextNode("Selected Date: ")
+          booker.appendChild(sdate);
+
+          var date = document.createElement("SPAN");
+          date.setAttribute("id", "infodate");
+          date.innerHTML = info.dateStr;
+          booker.appendChild(date);
+
           var bookButton = document.createElement("BUTTON");
           bookButton.setAttribute("type", "button");
           bookButton.setAttribute("onclick", "bookFunction()");
 
           var dropdownHOUR = document.createElement("SELECT");
           dropdownHOUR.setAttribute("name", "Hour");
-          dropdownHOUR.setAttribute("id", "Hour");
+          dropdownHOUR.setAttribute("id", "HOUR");
           
           let i = 1;
           for (i=1; i<13; i++){
@@ -62,8 +86,8 @@
           booker.appendChild(dropdownMIN);
 
           var dropdownPM = document.createElement("SELECT");
-          dropdownPM.setAttribute("name", "MIN");
-          dropdownPM.setAttribute("id", "MIN");
+          dropdownPM.setAttribute("name", "PM");
+          dropdownPM.setAttribute("id", "PM");
           
           var time = document.createElement("OPTION");
           time.setAttribute("value", "AM");
@@ -76,6 +100,22 @@
           dropdownPM.appendChild(time);
 
           booker.appendChild(dropdownPM);
+
+          // <label for="fname">First name:</label>
+          // <input type="text" id="fname" name="fname">
+          var label = document.createElement("LABEL");
+          label.setAttribute("for", "name");
+          label.innerHTML = "Full Name";
+          booker.appendChild(label);
+
+          var colon = document.createTextNode(":")
+          booker.appendChild(colon);
+
+          var input = document.createElement("INPUT");
+          input.setAttribute("type", "text");
+          input.setAttribute("id", "FNAME");
+          input.setAttribute("name", "Name");
+          booker.appendChild(input);
 
           var text = document.createTextNode("Book Appointment");
           bookButton.appendChild(text);
@@ -91,5 +131,9 @@
   <body>
     <div style="width: 70%;" id='calendar'></div>
     <div id="booker"></div>
+    <div id = "viewButton">
+      <button type="button" onclick="viewFunction()">View Appointments</button>
+    </div>
+    <div id = "applist"></div>
   </body>
 </html>
