@@ -70,7 +70,7 @@ ul li a:hover {
 
 .button{
   position: absolute;
-  top:53%;
+  top:56%;
   left:75%;
   width: 460px;
   transform: translate(-50%, -50%);
@@ -118,7 +118,7 @@ ul li a:hover {
 
   #round-container {
     position: absolute;
-    top:22%;
+    top:29%;
     left:49.5%;
     width: 200px;
     transform: translate(-50%, -50%);
@@ -138,7 +138,7 @@ ul li a:hover {
     width: auto;
     height: auto;
     position: absolute;
-    top:40%;
+    top:55%;
     left:49.5%;
     transform: translate(-50%, -50%);
     text-align: left;
@@ -185,4 +185,3 @@ ul li a:hover {
     background-color: orange;
     color: rgb(0, 5, 63);
   }
-
