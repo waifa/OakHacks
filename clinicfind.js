@@ -60,7 +60,7 @@ function clinicFind(){
                     lng = data.results[0].geometry.location.lng
                 }else{
                     notValid = true;
-                    alert("Not a Valid Postal Code")
+                    alert("Not a Valid Postal Code or API key Expired")
                 }
                 if (!notValid){
                 let lat2
@@ -74,7 +74,7 @@ function clinicFind(){
                         lat2 = data2.results[0].geometry.location.lat
                         lng2 = data2.results[0].geometry.location.lng
                     }else{
-                        alert("Not a Valid Postal Code")
+                        alert("Not a Valid Postal Code or API key Expired")
                     }
                     clinics[i].distance = self.distance(lat, lng, lat2, lng2, "K")
                 }
