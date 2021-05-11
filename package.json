@@ -1,0 +1,27 @@
+{
+  "name": "my_clinic",
+  "version": "1.0.0",
+  "description": "Clinic Appointment System",
+  "main": "index.html",
+  "dependencies": {
+    "fullcalendar": "^5.3.2",
+    "fullcalendar-scheduler": "^5.3.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/moazmuha/OakHacks.git"
+  },
+  "keywords": [
+    "Clinic"
+  ],
+  "author": "Muhammad Moaz, Muhammad Huzaifa, Danyal Khan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/moazmuha/OakHacks/issues"
+  },
+  "homepage": "https://github.com/moazmuha/OakHacks#readme"
+}
